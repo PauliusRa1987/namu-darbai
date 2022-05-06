@@ -26,6 +26,8 @@ $sestasKintamasis = rand(0, 25); echo "Trecias skaicius: $sestasKintamasis", '<b
 
 if ($ketvirtasKintamasis < $penktasKintamasis && $ketvirtasKintamasis > $sestasKintamasis ||$ketvirtasKintamasis > $penktasKintamasis && $ketvirtasKintamasis < $sestasKintamasis) echo "Vidurinis skaicius yra: $ketvirtasKintamasis";
 elseif ($penktasKintamasis < $ketvirtasKintamasis && $penktasKintamasis > $sestasKintamasis || $penktasKintamasis > $ketvirtasKintamasis && $penktasKintamasis < $sestasKintamasis) echo "Vidurinis skaicius yra: $penktasKintamasis";
+elseif ($ketvirtasKintamasis === $penktasKintamasis || $ketvirtasKintamasis === $sestasKintamasis || $penktasKintamasis === $sestasKintamasis) echo "Vidurinio skaiciaus nera, nes du skaiciai pasikartoja.";
+elseif ($ketvirtasKintamasis === $penktasKintamasis && $ketvirtasKintamasis === $sestasKintamasis && $penktasKintamasis === $sestasKintamasis) echo "Visi skaiciai yra vienodi!";
 else echo("Vidurinis skaicius yra: $sestasKintamasis");
 
 echo '<br> -------------------Nr.4 <br> ';
@@ -40,18 +42,29 @@ else echo "Is krastinius $a, $b, $c trikampis NEIMANOMAS!";
 
 echo '<br> -------------------Nr.5 <br> ';
 
-// 5. uzdavinys NEBAIGTAS!
+// 5. uzdavinys
 
 $kVienas = rand(0, 2); echo "Pirmas: $kVienas", '<br>';
 $kDu = rand(0, 2); echo "Antras: $kDu", '<br>';
 $kTrys = rand(0, 2); echo "Trecias: $kTrys", '<br>';
 $kKeturi = rand(0, 2); echo "Ketvirtas: $kKeturi", '<br>';
 
-if($kVienas === 0 && $kDu === 0 && $kTrys === 0 && $kKeturi === 1) echo "Ats: nuliu: 4, vienetu: 0,  dvejetu: 0.";
-if($kVienas === 1 && $kDu === 0 && $kTrys === 0 && $kKeturi === 0 || $kVienas === 0 && $kDu === 1 && $kTrys === 0 && $kKeturi === 0 || $kVienas === 0 && $kDu === 0 && $kTrys === 1 && $kKeturi === 0 || $kVienas === 0 && $kDu === 0 && $kTrys === 0 && $kKeturi === 1) echo "Ats: nuliu: 3, vienetu: 1,  dvejetu: 0.";
-if($kVienas === 1 && $kDu === 1 && $kTrys === 1 && $kKeturi === 1) echo "Ats: nuliu: 0, vienetu: 4,  dvejetu: 0.";
-if($kVienas === 2 && $kDu === 2 && $kTrys === 2 && $kKeturi === 2) echo "Ats: nuliu: 0, vienetu: 4,  dvejetu: 0.";
+$nuliai = 0;
+if ($kVienas === 0) $nuliai++;
+if ($kDu === 0) $nuliai++;
+if ($kTrys === 0) $nuliai++;
+if ($kKeturi === 0) $nuliai++;
 
+
+$vienetukai = 0;
+if ($kVienas === 1) $vienetukai++;
+if ($kDu === 1) $vienetukai++;
+if ($kTrys === 1) $vienetukai++;
+if ($kKeturi === 1) $vienetukai++;
+
+$dvejetukai = 4 - $vienetukai - $nuliai;
+
+echo "Nuliai: $nuliai, Vienetai: $vienetukai, Dvejetai: $dvejetukai.";
 
 echo '<br> -------------------Nr.6 <br> ';
 
@@ -124,6 +137,10 @@ echo '<br> -------------------Nr.10 <br> ';
 $valandos = rand(0, 23);
 $minutes = rand(0, 59);
 $sekundes = rand(0, 59);
+$zero = '0';
+if($valandos < 10) $valandos = $zero.$valandos;
+if($minutes < 10) $minutes = $zero.$minutes;
+if($sekundes < 10) $sekundes = $zero.$sekundes;
 
 echo "Laikrodis rodo     $valandos : $minutes : $sekundes", '<br>';
 
@@ -140,6 +157,8 @@ $minutes -= 60;}
 
 
 if ($valandos >= 24) $valandos -= 24;
+if($minutes < 10) $minutes = $zero.$minutes;
+if($newSekundes < 10) $newSekundes = $zero.$newSekundes;
 
 echo "Pridejus $pridetinisLaikas sekundes dabar laikrodis rodo $valandos : $minutes : $newSekundes";
 
@@ -153,3 +172,73 @@ $extraTrecias = rand(1000, 9999); echo "3)  $extraTrecias", '<br>';
 $extraKetvirtas = rand(1000, 9999); echo "4)  $extraKetvirtas", '<br>';
 $extraPenktas = rand(1000, 9999); echo "5)  $extraPenktas", '<br>';
 $extraSestas = rand(1000, 9999); echo "6)  $extraSestas", '<br>';
+
+
+
+
+
+$nrFirst = min($extraPirmas, $extraAntras, $extraTrecias, $extraKetvirtas, $extraPenktas, $extraSestas);
+$nrSix = max($extraPirmas, $extraAntras, $extraTrecias, $extraKetvirtas, $extraPenktas, $extraSestas);
+if($extraPirmas < $nrSix) $extraPirmas;
+else $extraPirmas = 0;
+if($extraAntras < $nrSix) $extraAntras;
+else $extraAntras = 0;
+if($extraTrecias < $nrSix) $extraTrecias;
+else $extraTrecias = 0;
+if($extraKetvirtas < $nrSix) $extraKetvirtas;
+else $extraKetvirtas = 0;
+if($extraPenktas < $nrSix) $extraPenktas;
+else $extraPenktas = 0;
+if($extraSestas < $nrSix) $extraSestas;
+else $extraSestas = 0;
+
+$nrFive = max($extraPirmas, $extraAntras, $extraTrecias, $extraKetvirtas, $extraPenktas, $extraSestas);
+
+if($extraPirmas < $nrFive) $extraPirmas;
+else $extraPirmas = 0;
+if($extraAntras < $nrFive) $extraAntras;
+else $extraAntras = 0;
+if($extraTrecias < $nrFive)  $extraTrecias;
+else $extraTrecias = 0;
+if($extraKetvirtas < $nrFive) $extraKetvirtas;
+else $extraKetvirtas = 0;
+if($extraPenktas < $nrFive) $extraPenktas;
+else $extraPenktas = 0;
+if($extraSestas < $nrFive) $extraSestas;
+else $extraSestas = 0;
+
+$nrFour = max($extraPirmas, $extraAntras, $extraTrecias, $extraKetvirtas, $extraPenktas, $extraSestas);
+
+if($extraPirmas < $nrFour) $extraPirmas;
+else $extraPirmas = 0;
+if($extraAntras < $nrFour) $extraAntras;
+else $extraAntras = 0;
+if($extraTrecias < $nrFour) $extraTrecias;
+else $extraTrecias = 0;
+if($extraKetvirtas < $nrFour) $extraKetvirtas;
+else $extraKetvirtas = 0;
+if($extraPenktas < $nrFour) $extraPenktas;
+else $extraPenktas = 0;
+if($extraSestas < $nrFour) $extraSestas;
+else $extraSestas = 0;
+
+$nrThree = max($extraPirmas, $extraAntras, $extraTrecias, $extraKetvirtas, $extraPenktas, $extraSestas);
+
+if($extraPirmas < $nrThree) $extraPirmas;
+else $extraPirmas = 0;
+if($extraAntras < $nrThree) $extraAntras;
+else $extraAntras = 0;
+if($extraTrecias < $nrThree) $extraTrecias;
+else $extraTrecias = 0;
+if($extraKetvirtas < $nrThree) $extraKetvirtas;
+else $extraKetvirtas = 0;
+if($extraPenktas < $nrThree) $extraPenktas;
+else $extraPenktas = 0;
+if($extraSestas < $nrThree) $extraSestas;
+else $extraSestas = 0;
+
+$nrTo = max($extraPirmas, $extraAntras, $extraTrecias, $extraKetvirtas, $extraPenktas, $extraSestas);
+
+$result = "Ats: $nrFirst, $nrTo, $nrThree, $nrFour, $nrFive, $nrSix.";
+
+echo $result;
