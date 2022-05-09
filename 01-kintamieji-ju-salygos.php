@@ -37,30 +37,30 @@ $a = rand(1, 10);
 $b = rand(1, 10); 
 $c = rand(1, 10);
 
-if ($a + $b > $c && $a + $c > $b && $b + $c > $a) echo "Is duouju krastinius $a, $b, $c trikampi sudaryti galima";
+if ($a + $b > $c && $a + $c > $b && $b + $c > $a) echo "Is duotuju krastinius $a, $b, $c trikampi sudaryti galima";
 else echo "Is krastinius $a, $b, $c trikampis NEIMANOMAS!";
 
 echo '<br> -------------------Nr.5 <br> ';
 
 // 5. uzdavinys
 
-$kVienas = rand(0, 2); echo "Pirmas: $kVienas", '<br>';
-$kDu = rand(0, 2); echo "Antras: $kDu", '<br>';
-$kTrys = rand(0, 2); echo "Trecias: $kTrys", '<br>';
-$kKeturi = rand(0, 2); echo "Ketvirtas: $kKeturi", '<br>';
+$kintamasisVienas = rand(0, 2); echo "Pirmas: $kintamasisVienas", '<br>';
+$kintamasisDu = rand(0, 2); echo "Antras: $kintamasisDu", '<br>';
+$kintamasisTrys = rand(0, 2); echo "Trecias: $kintamasisTrys", '<br>';
+$kintamasisKeturi = rand(0, 2); echo "Ketvirtas: $kintamasisKeturi", '<br>';
 
 $nuliai = 0;
-if ($kVienas === 0) $nuliai++;
-if ($kDu === 0) $nuliai++;
-if ($kTrys === 0) $nuliai++;
-if ($kKeturi === 0) $nuliai++;
+if ($kintamasisVienas === 0) $nuliai++;
+if ($kintamasisDu === 0) $nuliai++;
+if ($kintamasisTrys === 0) $nuliai++;
+if ($kintamasisKeturi === 0) $nuliai++;
 
 
 $vienetukai = 0;
-if ($kVienas === 1) $vienetukai++;
-if ($kDu === 1) $vienetukai++;
-if ($kTrys === 1) $vienetukai++;
-if ($kKeturi === 1) $vienetukai++;
+if ($kintamasisVienas === 1) $vienetukai++;
+if ($kintamasisDu === 1) $vienetukai++;
+if ($kintamasisTrys === 1) $vienetukai++;
+if ($kintamasisKeturi === 1) $vienetukai++;
 
 $dvejetukai = 4 - $vienetukai - $nuliai;
 
@@ -75,21 +75,21 @@ echo "<h$tagSkaicius>$tagSkaicius</h$tagSkaicius>";
 echo '<br> -------------------Nr.7 <br> ';
 
 // 7. uzdavinys 
-$spePirmas = rand(-10,10); 
-$speAntras = rand(-10,10); 
-$speTrecias = rand(-10,10); 
+$septintoPirmasSkaicius = rand(-10,10); 
+$septintoAntrasSkaicius = rand(-10,10); 
+$septintoTreciasSkaicius = rand(-10,10); 
 
-if($spePirmas < 0) echo "<p style= 'color: green'>$spePirmas</p>";
-elseif($spePirmas === 0) echo "<p style= 'color: red'>$spePirmas</p>";
-else echo "<p style= 'color: blue'>$spePirmas</p>";
+if($septintoPirmasSkaicius < 0) echo "<p style= 'color: green'>$septintoPirmasSkaicius</p>";
+elseif($septintoPirmasSkaicius === 0) echo "<p style= 'color: red'>$septintoPirmasSkaicius</p>";
+else echo "<p style= 'color: blue'>$septintoPirmasSkaicius</p>";
 
-if($speAntras < 0) echo "<p style= 'color: green'>$speAntras</p>";
-elseif($speAntras === 0) echo "<p style= 'color: red'>$speAntras</p>";
-else echo "<p style= 'color: blue'>$speAntras</p>";
+if($septintoAntrasSkaicius < 0) echo "<p style= 'color: green'>$septintoAntrasSkaicius</p>";
+elseif($septintoAntrasSkaicius === 0) echo "<p style= 'color: red'>$septintoAntrasSkaicius</p>";
+else echo "<p style= 'color: blue'>$septintoAntrasSkaicius</p>";
 
-if($speTrecias < 0) echo "<p style= 'color: green'>$speTrecias</p>";
-elseif($speTrecias === 0) echo "<p style= 'color: red'>$speTrecias</p>";
-else echo "<p style= 'color: blue'>$speTrecias</p>";
+if($septintoTreciasSkaicius < 0) echo "<p style= 'color: green'>$septintoTreciasSkaicius</p>";
+elseif($septintoTreciasSkaicius === 0) echo "<p style= 'color: red'>$septintoTreciasSkaicius</p>";
+else echo "<p style= 'color: blue'>$septintoTreciasSkaicius</p>";
 
 echo '<br> -------------------Nr.8 <br> ';
 
@@ -111,22 +111,22 @@ else echo "Perkama $zvakiuKiekis vnt. uz $zvakiuKainaBeNuolaidos EUR. ";
 echo '<br><br> -------------------Nr.9 <br> ';
 
 // 9. uzdavinys 
-$devPirmas = rand(0, 100); echo "Pirmas skaicius:  $devPirmas", '<br>';
-$devAntras = rand(0, 100); echo "Antras skaicius:  $devAntras", '<br>';
-$devTrecias = rand(0, 100); echo "Trecias skaicius:  $devTrecias", '<br>';
+$devintoPirmasSkaicius = rand(0, 100); echo "Pirmas skaicius:  $devintoPirmasSkaicius", '<br>';
+$devintoAntrasSkaicius = rand(0, 100); echo "Antras skaicius:  $devintoAntrasSkaicius", '<br>';
+$devintoTreciasSkaicius = rand(0, 100); echo "Trecias skaicius:  $devintoTreciasSkaicius", '<br>';
 
-$vidurkis = round(($devPirmas+$devAntras+$devTrecias)/3); 
+$vidurkis = round(($devintoPirmasSkaicius+$devintoAntrasSkaicius+$devintoTreciasSkaicius)/3); 
 
-if($devPirmas<10 || $devPirmas>90) $devPirmas=0;
-if($devAntras<10 || $devAntras>90) $devAntras=0;
-if($devTrecias<10 || $devTrecias>90) $devTrecias=0;
+if($devintoPirmasSkaicius<10 || $devintoPirmasSkaicius>90) $devintoPirmasSkaicius=0;
+if($devintoAntrasSkaicius<10 || $devintoAntrasSkaicius>90) $devintoAntrasSkaicius=0;
+if($devintoTreciasSkaicius<10 || $devintoTreciasSkaicius>90) $devintoTreciasSkaicius=0;
 
-if($devPirmas === 0 &&  $devAntras === 0 || $devPirmas === 0 &&  $devTrecias === 0 || $devTrecias === 0 &&  $devAntras === 0) $dalikliss = 1;
-if($devPirmas === 0 && $devAntras !==0 && $devTrecias !==0 || $devPirmas !== 0 && $devAntras ===0 && $devTrecias !==0 || $devPirmas !== 0 && $devAntras !==0 && $devTrecias ===0 ) $dalikliss = 2;
-if($devPirmas !== 0 && $devAntras !==0 && $devTrecias !==0) $dalikliss = 3; 
+if($devintoPirmasSkaicius === 0 &&  $devintoAntrasSkaicius === 0 || $devintoPirmasSkaicius === 0 &&  $devintoTreciasSkaicius === 0 || $devintoTreciasSkaicius === 0 &&  $devintoAntrasSkaicius === 0) $dalikliss = 1;
+if($devintoPirmasSkaicius === 0 && $devintoAntrasSkaicius !==0 && $devintoTreciasSkaicius !==0 || $devintoPirmasSkaicius !== 0 && $devintoAntrasSkaicius ===0 && $devintoTreciasSkaicius !==0 || $devintoPirmasSkaicius !== 0 && $devintoAntrasSkaicius !==0 && $devintoTreciasSkaicius ===0 ) $dalikliss = 2;
+if($devintoPirmasSkaicius !== 0 && $devintoAntrasSkaicius !==0 && $devintoTreciasSkaicius !==0) $dalikliss = 3; 
 
 
-$newVidurkis = round(($devPirmas+$devAntras+$devTrecias)/$dalikliss);
+$newVidurkis = round(($devintoPirmasSkaicius+$devintoAntrasSkaicius+$devintoTreciasSkaicius)/$dalikliss);
 
 echo "Skaiciu vidurkis yra $vidurkis , atmetus  <10 ir  >90 skaicius vidurkis yra $newVidurkis. <br>";
 
