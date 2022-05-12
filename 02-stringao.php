@@ -116,7 +116,6 @@ function gautiSakini($strigoIlgis, $sujungtiDevintoMasyvai){
         if (!strpos($manoStringas, $atsitiktinisZodis)) {
             $manoStringas.= $atsitiktinisZodis.' ';
         }
-        
     }return  $manoStringas;
 }
 echo gautiSakini($strigoIlgis, $sujungtiDevintoMasyvai);
