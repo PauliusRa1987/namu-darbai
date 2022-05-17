@@ -1,5 +1,5 @@
 <?php
-// 1. uzdavinys
+// 1. uzdavinys. Sukurkite 4 kintamuosius.
 $vardas = 'Paulius';
 $pavarde = 'Rasamavicius';
 $gimimoMetai = 1987;
@@ -9,7 +9,7 @@ $metuSkirtumas = $sieMetai - $gimimoMetai;
 echo "As esu $vardas $pavarde. Man yra $metuSkirtumas metai.";
 echo '<br> -------------------Nr.2 <br> ';
 
-// 2. uzdavinys
+// 2. uzdavinys. 2.Naudokite funkcija rand(). Sukurkite du kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
 $pirmasKintamasis = rand(0, 4); echo "Pirmas skaicius: $pirmasKintamasis", '<br>';
 $antrasisKintamasis = rand(0, 4); echo "Antras skaicius: $antrasisKintamasis", '<br>';
 
@@ -19,7 +19,7 @@ else echo 'Atsakymas: ', round($antrasisKintamasis/$pirmasKintamasis, 2);
 
 echo '<br> --------------------Nr.3 <br> ';
 
-// 3. uzdavinys
+// 3. uzdavinys. Naudokite funkcija rand(). Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintąmąjį turintį vidurinę reikšmę.
 $ketvirtasKintamasis = rand(0, 25); echo "Pirmas skaicius: $ketvirtasKintamasis", '<br>';
 $penktasKintamasis = rand(0, 25); echo "Antras skaicius: $penktasKintamasis", '<br>';
 $sestasKintamasis = rand(0, 25); echo "Trecias skaicius: $sestasKintamasis", '<br>';
@@ -32,7 +32,7 @@ else echo("Vidurinis skaicius yra: $sestasKintamasis");
 
 echo '<br> -------------------Nr.4 <br> ';
 
-// 4. uzdavinys
+// 4. uzdavinys. Įvedami skaičiai -a, b, c –kraštinių ilgiai, trys kintamieji (naudokite ​rand()​ funkcija nuo 1 iki 10). Parašykite PHP programą, kuri nustatytų, ar galima sudaryti trikampį ir atsakymą atspausdintų. 
 $a = rand(1, 10); 
 $b = rand(1, 10); 
 $c = rand(1, 10);
@@ -42,7 +42,7 @@ else echo "Is krastinius $a, $b, $c trikampis NEIMANOMAS!";
 
 echo '<br> -------------------Nr.5 <br> ';
 
-// 5. uzdavinys
+// 5. uzdavinys. Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. (sprendimui masyvo nenaudoti).
 
 $kintamasisVienas = rand(0, 2); echo "Pirmas: $kintamasisVienas", '<br>';
 $kintamasisDu = rand(0, 2); echo "Antras: $kintamasisDu", '<br>';
@@ -68,13 +68,13 @@ echo "Nuliai: $nuliai, Vienetai: $vienetukai, Dvejetai: $dvejetukai.";
 
 echo '<br> -------------------Nr.6 <br> ';
 
-// 6. uzdavinys 
+// 6. uzdavinys. Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage. Pvz skaičius 3- rezultatas: <h3>3</h3>
 $tagSkaicius = rand(1, 6);
 echo "<h$tagSkaicius>$tagSkaicius</h$tagSkaicius>";
 
 echo '<br> -------------------Nr.7 <br> ';
 
-// 7. uzdavinys 
+// 7. uzdavinys.Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni. 
 $septintoPirmasSkaicius = rand(-10,10); 
 $septintoAntrasSkaicius = rand(-10,10); 
 $septintoTreciasSkaicius = rand(-10,10); 
@@ -93,7 +93,7 @@ else echo "<p style= 'color: blue'>$septintoTreciasSkaicius</p>";
 
 echo '<br> -------------------Nr.8 <br> ';
 
-// 8. uzdavinys 
+// 8. uzdavinys.Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000.
 $zvakiuKiekis = rand(5, 3000);
 $zvakiuKainaBeNuolaidos = 1 * $zvakiuKiekis;
 if($zvakiuKainaBeNuolaidos > 2000){ 
@@ -110,7 +110,7 @@ else echo "Perkama $zvakiuKiekis vnt. uz $zvakiuKainaBeNuolaidos EUR. ";
 
 echo '<br><br> -------------------Nr.9 <br> ';
 
-// 9. uzdavinys 
+// 9. uzdavinys.Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus apvalinkite iki sveiko skaičiaus.
 $devintoPirmasSkaicius = rand(0, 100); echo "Pirmas skaicius:  $devintoPirmasSkaicius", '<br>';
 $devintoAntrasSkaicius = rand(0, 100); echo "Antras skaicius:  $devintoAntrasSkaicius", '<br>';
 $devintoTreciasSkaicius = rand(0, 100); echo "Trecias skaicius:  $devintoTreciasSkaicius", '<br>';
@@ -133,7 +133,7 @@ echo "Skaiciu vidurkis yra $vidurkis , atmetus  <10 ir  >90 skaicius vidurkis yr
 
 echo '<br> -------------------Nr.10 <br> ';
 
-// 10. uzdavinys 
+// 10. uzdavinys.Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją rand(). Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių.
 $valandos = rand(0, 23);
 $minutes = rand(0, 59);
 $sekundes = rand(0, 59);
@@ -164,7 +164,7 @@ echo "Pridejus $pridetinisLaikas sekundes dabar laikrodis rodo $valandos : $minu
 
 echo '<br> -------------------Nr.11 <br> ';
 
-// 11. uzdavinys 
+// 11. uzdavinys. 11.Naudokite funkcija rand(). Sugeneruokite 6 kintamuosius su atsitiktinem reikšmėm nuo 1000 iki 9999. Atspausdinkite reikšmes viename strige, išrūšiuotas nuo didžiausios iki mažiausios, atskirtas tarpais. Naudoti ciklų ir masyvų NEGALIMA. 
 
 $extraPirmas = rand(1000, 9999); echo "1)  $extraPirmas", '<br>';
 $extraAntras = rand(1000, 9999); echo "2)  $extraAntras", '<br>';
