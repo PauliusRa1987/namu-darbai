@@ -62,10 +62,10 @@ echo '<br>';echo '<br>';
 foreach($_6X6 as $row) {
 
     foreach($row as $number) {
-        echo " $number ";
+        // echo " $number ";
     }
     
-    echo '<br>';
+    // echo '<br>';
 }
 
 

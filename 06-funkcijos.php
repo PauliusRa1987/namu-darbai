@@ -92,7 +92,7 @@ function deepArray(){
 return $arrLong;
 }
 $skyScraper = deepArray();
-// print_r($skyScraper );
+print_r($skyScraper );
 
 echo '<br> -------------------Nr. 8 <br> ';
 // 8. uzdavinys8.Suskaičiuokite septinto uždavinio elementų, kurie nėra masyvai, sumą. Skaičiuoti reikia visuose masyvuose ir submasyvuose.
@@ -108,7 +108,7 @@ function arraySum($masyvas) {
     }
     return $suma;
 }
-// echo arraySum($skyScraper);
+echo arraySum($skyScraper);
 
 echo '<br> -------------------Nr. 9 <br> ';
 // 9. uzdavinys9.Sugeneruokite masyvą iš trijų elementų, kurie yra atsitiktiniai skaičiai nuo 1 iki 33. Jeigu tarp trijų paskutinių elementų yra nors vienas ne pirminis skaičius, prie masyvo pridėkite dar vieną elementą- atsitiktinį skaičių nuo 1 iki 33. Vėl patikrinkite pradinę sąlygą ir jeigu reikia pridėkite dar vieną elementą. Kartokite, kol sąlyga nereikalaus pridėti elemento. 
@@ -118,17 +118,14 @@ function primeNumber(){
     for ($i=0; $i < 3; $i++) { 
         $arrNr_9[] = rand(1, 33);
     }
-foreach($arrNr_9 as $value)
-    if ($value == 1) {
-        $arrNr_9[]=rand(1, 33);
-        primeNumber();
-    }else { 
-    for ($k=2; $k <= sqrt($value); $k++) { 
-        if ($value % $k != 0) {
-            $arrNr_9[]=rand(1, 33);
-            primeNumber();
-        } return $arrNr_9;
+    $lasTree = array_slice($arrNr_9, -3);
+    
+foreach($lasTree as $value){ 
+    if ($value == 1 || $value == 0 || $value % 2 !== 0)  {
+        $arrNr_9[]= rand(1, 33);  primeNumber();
     }
+         return $arrNr_9;
+
 }
 }
 $resultPrimeArr = primeNumber();
