@@ -1,27 +1,17 @@
 <?php
 
-function incrementer($nums) {
-    $newArr = [];
-    for ($i=1; $i <= count($nums); $i++) { 
-        $newArr[]=$i;
+function highAndLow($numbers){
+    $dar = explode(' ', $numbers);
+    function sortByLength($a,$b){
+        return strlen($b)-strlen($a);
     }
-    if($nums == []){
-        return [];
-    }
-    $yes=[];
-    $mazas= '';
-    for ($i=0; $i < count($nums); $i++) {
-        if ($nums[$i]+$newArr[$i] >= 10) {
-            $mazas.=$nums[$i]+$newArr[$i];
-            $naujas = substr($mazas,-1);
-            $yes[]=intval($naujas);
-        } else{ 
-        $yes[]=$nums[$i]+$newArr[$i];}
-    }return $yes;
+    usort($dar,'sortByLength');
+    $kon = $dar[count($dar)-1];
+    return strlen($kon);
 
-  }
+  
+}
+$nume = "bitcoin take over the world maybe who knows perhaps";
 
-// print_r(incrementer([1, 2, 3]));
-// print_r(incrementer([4, 6, 7, 1, 3]));
-// print_r(incrementer([3, 6, 9, 8, 9]));
-print_r(incrementer([3, 6, 9, 8, 9, 10, 12, 13, 14]));
+// print_r($dar);
+print_r(highAndLow($nume));
